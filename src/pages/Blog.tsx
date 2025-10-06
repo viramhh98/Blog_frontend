@@ -253,7 +253,7 @@
 // import { useNavigate } from "react-router-dom";
 
 // type Blog = {
-//   _id: string;
+//   id: string;
 //   title: string;
 //   summary: string;
 //   content: string;
@@ -289,9 +289,9 @@
 //       <div className="flex flex-col w-full max-w-5xl gap-8">
 //         {blogs.map((blog) => (
 //           <div
-//             key={blog._id}
+//             key={blog.id}
 //             className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row gap-4 hover:scale-105 transition transform cursor-pointer"
-//             onClick={() => navigate(`/blog/${blog._id}`)}
+//             onClick={() => navigate(`/blog/${blog.id}`)}
 //           >
 //             {blog.image && (
 //               <img
@@ -320,7 +320,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Blog = {
-  _id: string;
+  id: string;
   title: string;
   summary: string;
   content: string;
@@ -357,9 +357,9 @@ export default function BlogDisplay() {
       <div className="flex flex-col w-full max-w-5xl gap-8">
         {blogs.map((blog) => (
           <div
-            key={blog._id}
+            key={blog.id}
             className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row gap-4 hover:scale-105 transition transform cursor-pointer"
-            onClick={() => navigate(`/blog/${blog._id}`)}
+            onClick={() => navigate(`/blog/${blog.id}`)}
           >
             {blog.image && (
               <img

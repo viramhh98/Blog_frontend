@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Blog = {
-  _id: string;
+  id: string;
   title: string;
   summary: string;
   content: string;
@@ -44,7 +44,7 @@ export default function EditBlog() {
       });
       if (!response.ok) throw new Error("Failed to delete blog");
 
-      setBlogs((prev) => prev.filter((b) => b._id !== id));
+      setBlogs((prev) => prev.filter((b) => b.id !== id));
       alert("Blog deleted successfully!");
     } catch (error) {
       console.error("Error deleting blog:", error);
@@ -59,7 +59,7 @@ export default function EditBlog() {
       <div className="flex flex-col w-full max-w-5xl gap-8">
         {blogs.map((blog) => (
           <div
-            key={blog._id}
+            key={blog.id}
             className="relative bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row gap-4 hover:scale-105 transition transform group"
           >
             {/* Blog Image */}
@@ -99,7 +99,7 @@ export default function EditBlog() {
               aria-label="Edit blog"
               onClick={(e) => {
                 e.stopPropagation();
-                navigate(`/admin/edit-blog/${blog._id}`);
+                navigate(`/admin/edit-blog/${blog.id}`);
               }}
               className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg shadow-lg transition transform hover:scale-110 w-12 h-12"
             >
@@ -125,7 +125,7 @@ export default function EditBlog() {
               aria-label="Delete blog"
               onClick={(e) => {
                 e.stopPropagation();
-                handleDelete(blog._id);
+                handleDelete(blog.id);
               }}
               className="flex items-center justify-center bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg shadow-lg transition transform hover:scale-110 w-12 h-12"
             >

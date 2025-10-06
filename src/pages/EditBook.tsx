@@ -56,7 +56,7 @@
 //       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl">
 //         {books.map((book) => (
 //           <div
-//             key={book._id}
+//             key={book.id}
 //             className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 flex flex-col justify-between"
 //           >
 //             <img
@@ -85,13 +85,13 @@
 //               {/* Edit & Delete Buttons */}
 //               <div className="mt-4 flex gap-3">
 //                 <button
-//                   onClick={() => handleEdit(book._id)}
+//                   onClick={() => handleEdit(book.id)}
 //                   className="flex-1 bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300"
 //                 >
 //                   Edit
 //                 </button>
 //                 <button
-//                   onClick={() => handleDelete(book._id)}
+//                   onClick={() => handleDelete(book.id)}
 //                   className="flex-1 bg-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300"
 //                 >
 //                   Delete
@@ -180,7 +180,7 @@ const Books: React.FC = () => {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
             {booksInCategory.map((book) => (
               <div
-                key={book._id}
+                key={book.id}
                 className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 flex flex-col justify-between"
               >
                 <img
@@ -210,13 +210,13 @@ const Books: React.FC = () => {
                   {/* Edit & Delete Buttons */}
                   <div className="mt-4 flex gap-3">
                     <button
-                      onClick={() => handleEdit(book._id)}
+                      onClick={() => handleEdit(book.id)}
                       className="flex-1 bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300"
                     >
                       Edit
                     </button>
                     <button
-                      onClick={() => handleDelete(book._id)}
+                      onClick={() => handleDelete(book.id)}
                       className="flex-1 bg-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300"
                     >
                       Delete

@@ -11,7 +11,7 @@
 
 
 export type Blog = {
-  _id: string;
+  id: string;
   title: string;
   summary: string;
   content: string;

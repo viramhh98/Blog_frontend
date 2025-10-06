@@ -139,7 +139,7 @@
 //       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl">
 //         {books.map((book) => (
 //           <div
-//             key={ book._id} // use id or MongoDB _id
+//             key={ book.id} // use id or MongoDB id
 //             className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 flex flex-col justify-between"
 //           >
 //             <img
@@ -225,7 +225,7 @@ const Books: React.FC = () => {
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
             {booksInCategory.map((book) => (
               <div
-                key={book._id}
+                key={book.id}
                 className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 flex flex-col justify-between"
               >
                 <img

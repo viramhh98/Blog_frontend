@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 type Blog = {
-  _id: string;
+  id: string;
   title: string;
   summary: string;
   content: string;
