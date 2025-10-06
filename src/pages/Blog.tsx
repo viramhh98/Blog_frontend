@@ -319,17 +319,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-type Blog = {
-  id: string;
-  title: string;
-  summary: string;
-  content: string;
-  image?: string;
-  date?: any;
-  author: string;
-  category?: string;
-  tags?: string[];
-};
+import type { Blog } from "../types/blog";
 
 export default function BlogDisplay() {
   const [blogs, setBlogs] = useState<Blog[]>([]);

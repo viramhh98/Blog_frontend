@@ -113,16 +113,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
-type Blog = {
-  id: string;
-  title: string;
-  summary?: string;
-  content: string;
-  image?: string;
-  date?: any;
-  author: string;
-};
+import type { Blog } from "../types/blog";
 
 export default function BlogDetail() {
   const { id } = useParams();
