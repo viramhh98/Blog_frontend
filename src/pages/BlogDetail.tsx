@@ -114,7 +114,7 @@
 import  { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import type { Blog } from "../types/blog";
-
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 export default function BlogDetail() {
   const { id } = useParams();
   const navigate = useNavigate();

@@ -163,6 +163,7 @@
 // }
 
 import React, { useState } from "react";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export default function BookForm() {
   const [title, setTitle] = useState("");
@@ -187,7 +188,7 @@ export default function BookForm() {
         buyLink, // ✅ include in submission
       };
 
-      const response = await fetch("${API_BASE_URL}/books", {
+      const response = await fetch(`${API_BASE_URL}/books`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookData),

@@ -318,6 +318,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 import type { Blog } from "../types/blog";
 
@@ -328,7 +329,7 @@ export default function BlogDisplay() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("${API_BASE_URL}/blogs");
+        const response = await fetch(`${API_BASE_URL}/blogs`);
         if (!response.ok) throw new Error("Failed to fetch blogs");
 
         const data: Blog[] = await response.json();

@@ -11,6 +11,7 @@ type Blog = {
   tags?: string[];
   image?: string;
 };
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 // Edit Single Blog Form Component
 export default function EditSingleBlog() {

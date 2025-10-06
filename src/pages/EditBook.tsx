@@ -114,6 +114,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Book } from "../types/book";
 import placeholder from "../assets/react.svg";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const Books: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -122,7 +123,7 @@ const Books: React.FC = () => {
   // Fetch books
   const fetchBooks = async () => {
     try {
-      const res = await fetch("${API_BASE_URL}/books");
+      const res = await fetch(`${API_BASE_URL}/books`);
       const data = await res.json();
       setBooks(data);
     } catch (err) {

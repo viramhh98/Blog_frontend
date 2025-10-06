@@ -187,6 +187,7 @@
 import React, { useState, useEffect } from "react";
 import type { Book } from "../types/book";
 import placeholder from "../assets/react.svg";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const Books: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -194,7 +195,7 @@ const Books: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("${API_BASE_URL}/books")
+    fetch(`${API_BASE_URL}/books`)
       .then((res) => res.json())
       .then((data) => setBooks(data))
       .catch(() => setError("Failed to fetch books"))
