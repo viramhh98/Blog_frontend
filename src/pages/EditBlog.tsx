@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 type Blog = {
   id: string;
   title: string;
@@ -21,7 +21,7 @@ export default function EditBlog() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:5000/blogs");
+        const response = await fetch("${API_BASE_URL}/blogs");
         if (!response.ok) throw new Error("Failed to fetch blogs");
 
         const data: Blog[] = await response.json();
@@ -39,7 +39,7 @@ export default function EditBlog() {
     if (!confirm("Are you sure you want to delete this blog?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/blogs/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/blogs/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to delete blog");

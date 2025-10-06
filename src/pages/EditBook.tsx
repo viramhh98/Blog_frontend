@@ -10,7 +10,7 @@
 //   // Fetch books
 //   const fetchBooks = async () => {
 //     try {
-//       const res = await fetch("http://localhost:5000/books");
+//       const res = await fetch("${API_BASE_URL}/books");
 //       const data = await res.json();
 //       setBooks(data);
 //     } catch (err) {
@@ -27,7 +27,7 @@
 //     if (!window.confirm("Are you sure you want to delete this book?")) return;
 
 //     try {
-//       const res = await fetch(`http://localhost:5000/books/${id}`, {
+//       const res = await fetch(`${API_BASE_URL}/books/${id}`, {
 //         method: "DELETE",
 //       });
 
@@ -122,7 +122,7 @@ const Books: React.FC = () => {
   // Fetch books
   const fetchBooks = async () => {
     try {
-      const res = await fetch("http://localhost:5000/books");
+      const res = await fetch("${API_BASE_URL}/books");
       const data = await res.json();
       setBooks(data);
     } catch (err) {
@@ -139,7 +139,7 @@ const Books: React.FC = () => {
     if (!window.confirm("Are you sure you want to delete this book?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/books/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/books/${id}`, {
         method: "DELETE",
       });
 

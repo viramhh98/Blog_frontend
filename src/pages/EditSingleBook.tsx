@@ -18,7 +18,7 @@ export default function EditSingleBook() {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/books/${id}`);
+        const res = await fetch(`${API_BASE_URL}/books/${id}`);
         if (!res.ok) throw new Error("Failed to fetch book");
         const data = await res.json();
 
@@ -53,7 +53,7 @@ export default function EditSingleBook() {
         buyLink,
       };
 
-      const res = await fetch(`http://localhost:5000/books/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/books/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),

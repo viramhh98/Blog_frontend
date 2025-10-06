@@ -121,7 +121,7 @@
 //   const [books, setBooks] = useState<Book[]>([]);
 
 //   useEffect(() => {
-//     fetch("http://localhost:5000/books") // backend endpoint
+//     fetch("${API_BASE_URL}/books") // backend endpoint
 //       .then((res) => res.json())
 //       .then((data) => setBooks(data))
 //       .catch((err) => console.error("Failed to fetch books:", err));
@@ -194,7 +194,7 @@ const Books: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("${API_BASE_URL}/books")
       .then((res) => res.json())
       .then((data) => setBooks(data))
       .catch(() => setError("Failed to fetch books"))

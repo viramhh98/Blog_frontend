@@ -32,7 +32,7 @@ export default function EditSingleBlog() {
 
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/blogs/${id}`);
+        const response = await fetch(`${API_BASE_URL}/blogs/${id}`);
         if (!response.ok) throw new Error("Failed to fetch blog");
 
         const data: Blog = await response.json();
@@ -68,7 +68,7 @@ export default function EditSingleBlog() {
         image,
       };
 
-      const response = await fetch(`http://localhost:5000/blogs/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/blogs/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(blogData),

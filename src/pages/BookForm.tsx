@@ -187,7 +187,7 @@ export default function BookForm() {
         buyLink, // ✅ include in submission
       };
 
-      const response = await fetch("http://localhost:5000/books", {
+      const response = await fetch("${API_BASE_URL}/books", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookData),
